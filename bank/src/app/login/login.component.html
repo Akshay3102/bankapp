@@ -1,0 +1,31 @@
+<div class="row">
+    <h1 class="text-center">Login Page</h1>
+    <div class="col-4"></div>
+    <div class="col-4" >
+        <form (ngSubmit)="login()" [formGroup]="loginForm" class="border mt-5 p-5" >
+            <div>
+                <label for="">Account Number</label>
+                <input name="acno" formControlName="acno" type="text" class="form-control" placeholder="Account number">
+
+            </div>
+            <div *ngIf="this.loginForm.get('acno')?.touched && this.loginForm.get('acno')?.errors" style="color: red;">
+                Invalid Account Number
+            </div>
+            <div>
+                <label for="">Password</label>
+                <input name="pswd" formControlName="pswd" type="password" class="form-control" placeholder="password">
+ 
+            </div>
+            <div *ngIf="this.loginForm.get('pswd')?.touched && this.loginForm.get('pswd')?.errors" style="color: red;">
+                Invalid password
+            </div>
+            <div class=" mt-2">
+                <button class="btn btn-primary">Login
+
+                </button>
+             <span style="float:right">New User?   <a href="register">Register</a></span>
+            </div>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>
